@@ -25,21 +25,9 @@ config = ConfigParser()
 config.read("./config.ini")
 
 
-class EmailData:
-    def __init__(self, subject, to, body, priority, mail_id_name):
-        self.subject = subject
-        self.to = to
-        self.body = body
-        self.sender = os.environ.get("EMAIL_SENDER")
-        self.emailType = "text/html"
-        self.mailIdName = mail_id_name
-        self.priority = str(priority)
-        self.cc = os.environ.get("EMAIL_CC")
 
 
-class AlertTO:
-    def __init__(self, subject, to, body, priority, mail_id_name):
-        self.emailData = EmailData(subject, to, body, priority, mail_id_name).__dict__
+
 
 
 class MessageToAR_FILEFiles:
